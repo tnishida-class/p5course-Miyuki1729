@@ -28,13 +28,11 @@ function setup() {
           t = (size / 2) * (1 + 2 * j);
       if(j < 3 && p % 2 == 1){
         fill(255, 0, 0);
-        ellipse(s, t, size - 4);
       }
       else if(4 < j && p % 2 == 1){
         fill(0);
-        ellipse(s, t, size - 4);
       }
-
+      ellipse(s, t, size - 4);
 
 
       // for(let s = (1 + j) * )
