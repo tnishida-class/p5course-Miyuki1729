@@ -24,12 +24,14 @@
 // オブジェクト名.キー = 新しい値;    // 値を上書きする方法その２
 
 let balls = [];
+let count;
 
 function setup(){
   createCanvas(windowWidth, windowHeight);
 }
 
 function draw(){
+  count++;
   background(160, 192, 255);
   for(let i = 0; i < balls.length; i++){ // すべてのボールを描画し、速度の分だけ移動させる
     let b = balls[i];
@@ -37,6 +39,11 @@ function draw(){
     b.x += b.vx;
     b.y += b.vy;
   }
+  if(count % 60 == 0){
+    const b = { x: width/2, y: height/2, size: random(10) + 2, vx: random(2) + 1, vy: random(2) + 1 };
+    balls.push(b);
+  }
+
 }
 
 function mouseDragged(){ // ドラッグされたらボールを増やす
