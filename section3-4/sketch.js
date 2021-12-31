@@ -37,10 +37,11 @@ function keyPressed(){
 
 function mousePressed(){
   grabbed = dist(mouseX, mouseY, x, y) < 30; // distは２点の距離を求める関数
+  // 新登場の dist 関数は２点の距離を求める関数（grabbed には true か false が代入される）
 }
 
 function mouseDragged(){
-  if(grabbed){
+  if(grabbed){ // つかんでいるときは円がマウスに追従する
     x = mouseX;
     y = mouseY;
   }
@@ -49,8 +50,8 @@ function mouseDragged(){
 function mouseReleased(){
   if(grabbed){
     grabbed = false;
-    vx = mouseX - pmouseX;
-    vy = mouseY - pmouseY;
+    vx = mouseX - pmouseX; // pmouseX は少し前のマウスのx座標
+    vy = mouseY - pmouseY; // pmouseY は少し前のマウスのy座標
   }
 }
 
